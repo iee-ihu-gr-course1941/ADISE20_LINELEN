@@ -7,13 +7,10 @@
 	border-radius: 20px;
 	padding-top: 20px;
 }
-body{
-	background-image: url(image/image1.jpg);
-	background-size: cover;
-}
+
 label{
 	font-size: 38px;
-	margin-left: 129px;
+	margin-left: 15px;
 	font-family: Forte;
 	color:rgb(19,192,215);
 }
