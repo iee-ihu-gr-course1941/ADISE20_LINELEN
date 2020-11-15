@@ -1,0 +1,120 @@
+body {
+    background-color: #0C0C0D;
+    color: #ffffff;
+    font-family: 'Montserrat';
+}
+
+#pass {
+    margin-left: 3%;
+}
+#assign_color {
+    display: none;
+}
+
+button {
+    background-color: #808080;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 15px;
+    padding: 10px 30px;
+    text-shadow: 0 0 5px #ffffff;
+    transition: background-color 0.5s, text-shadow 0.5s;
+}
+
+button:hover {
+    background-color: #cc0000;
+    text-shadow: 0 0 15px #ffffff;
+}
+
+button:active {
+    background-color: #000000;
+}
+
+#board {
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffffff;
+    margin: auto;
+    background-color: #008000;
+    width: 90%;
+    height: 650px;
+    
+}
+
+#hand {
+    position: relative;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: -10%;
+    width: 50%;
+    border: 73px solid #808080;
+    background-color: #808080;
+    /*display: none;*/
+
+}
+
+#Red {
+    position: absolute;
+    margin-top: 12%;
+    margin-left: 35%;
+}
+
+#top_card {
+    position: absolute;
+    margin-top: 12%;
+    margin-left: 55%;
+}
+
+#hand > img {
+    width: 10%;
+}
+
+#Red > img {
+    width: 110%;
+}
+
+#top_card > img {
+    width: 110%;
+}
+.player_box {
+    text-align: center;
+    position: relative;
+    border-radius: 15px;
+    border: 5px solid #808080;
+    background-color: #808080;
+    width: 20%;
+}
+.enabled {
+    border: 5px solid #36e236;
+}
+
+.current_player {
+    border: 5px dotted #ffffff;
+}
+p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.top {
+    margin: auto;
+    top: 2%;
+}
+
+.left {
+    left: 1%;
+    top: 15%;
+}
+
+.right {
+    right: -78.2%;
+    top: 1.1%;
+}
+
+.bottom {
+    margin: auto;
+    bottom: -16%;
+}
+
