@@ -1,8 +1,25 @@
+<?php
+session_start();
+if (!isset($_REQUEST['p'])) {
+    $_REQUEST['p'] = '';
+}
+if ($_REQUEST['p'] == 'do_connect') {
+    $_REQUEST['p'] = '';
+    require "do_connect.php";
+}
+if (!isset($_SESSION['user'])) {
+    header("Location: login2.php");
+}
+echo $_SESSION['user'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Game</title>
 	 <link rel="stylesheet" type="text/css" href="css/game.css">
+     <script src="game.js"></script>
 </head>
 <body>
 <div id="board">
@@ -17,16 +34,9 @@
             <p class="name">Player 1</p>
             <p class="number_of_cards">0</p>
         </div>
-        <div class="player_box left">
-            <p class="name">Player 2</p>
-            <p class="number_of_cards">0</p>
-        </div>
-        <div class="player_box right">
-            <p class="name">Player 4</p>
-            <p class="number_of_cards">0</p>
-        </div>
+       
         <div class="player_box bottom">
-            <p class="name">Player 3</p>
+            <p class="name">Player 2</p>
             <p class="number_of_cards">0</p>
         </div>
 

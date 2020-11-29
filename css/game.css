@@ -103,18 +103,10 @@ p {
     top: 2%;
 }
 
-.left {
-    left: 1%;
-    top: 15%;
-}
-
-.right {
-    right: -78.2%;
-    top: 1.1%;
-}
 
 .bottom {
-    margin: auto;
-    bottom: -16%;
+    left: 40%;
+    position: absolute;
+    bottom: 25%;
 }
 
