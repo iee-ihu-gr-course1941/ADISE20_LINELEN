@@ -36,7 +36,7 @@ echo $_SESSION['user'];
         </div>
        
         <div class="player_box bottom">
-            <p class="name">Player 2</p>
+            <p class="name"><?php echo ($_SESSION['Username']) ?></p>
             <p class="number_of_cards">0</p>
         </div>
 
@@ -45,5 +45,6 @@ echo $_SESSION['user'];
 </div>
         <div id="hand">
         </div>
+
 </body>
 </html>
