@@ -8,7 +8,7 @@ require "dbconnect.php";
 		$result = $stmt1->get_result();
 
 		if(mysqli_num_rows($result)==0){
-		$_SESSION['user'] = "Id1";
+		$_SESSION['user'] = "player1";
 		$_SESSION['Username'] = $Username;
 
 		$stmt0 = $mysqli->prepare("DELETE FROM `login`");
@@ -20,17 +20,17 @@ require "dbconnect.php";
 		$stmt1 = $mysqli->prepare("UPDATE `start` SET `games`=null,`has_turn`=null");
 		$stmt1->execute();
 
-		$stmt = $mysqli->prepare("INSERT INTO `login` (`Id`,`Username`) VALUES ('{$_SESSION['user']}','{$_SESSION['Username']}')");
+		$stmt = $mysqli->prepare("INSERT INTO `login` (`Players`,`Username`) VALUES ('{$_SESSION['user']}','{$_SESSION['Username']}')");
 		$stmt->execute();
 		 header("Location: game.php");
 		} else{
-		$_SESSION['user'] = "Id2";
+		$_SESSION['user'] = "player2";
 		$_SESSION['Username'] = $Username;
-		$stmt3 = $mysqli->prepare("SELECT * FROM `login` WHERE `Id`='Id1'");
+		$stmt3 = $mysqli->prepare("SELECT * FROM `login` WHERE `Players`='player1'");
 		$stmt3->execute();
 		$result = $stmt3->get_result();
 		if(mysqli_num_rows($result)==0){
-            $_SESSION['user']="Id1";
+            $_SESSION['user']="player1";
 		}
 
 		$stmt0 = $mysqli->prepare("SELECT * FROM `login`");
@@ -46,14 +46,14 @@ require "dbconnect.php";
 		$stmt3 = $mysqli->prepare("UPDATE `start` SET `games`=null,`turn`=null");
 		$stmt3->execute();
 
-		$_SESSION['user'] = "Id1";
+		$_SESSION['user'] = "player1";
 		}
 
-        if ($_SESSION['user']=="Id2"){
+        if ($_SESSION['user']=="player2"){
 		$stmt4 = $mysqli->prepare("UPDATE `start` SET `games`='initialized',`turn`=null");
 		$stmt4->execute();
 		}
-		$stmt = $mysqli->prepare("INSERT INTO `login` (`Id`,`Username`) VALUES ('{$_SESSION['user']}','{$_SESSION['Username']}')");
+		$stmt = $mysqli->prepare("INSERT INTO `login` (`Players`,`Username`) VALUES ('{$_SESSION['user']}','{$_SESSION['Username']}')");
 		$stmt->execute();
 		 header("Location: game.php");
 		}

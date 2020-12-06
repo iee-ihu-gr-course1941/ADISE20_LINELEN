@@ -12,7 +12,7 @@ body  {
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-		<form action="game.php" method="GET">
+		<form class="" action="game.php" method="GET">
 			<div class="container">
 				<label for="">Username</label>
 				<input type="text" id="username" placeholder="Username" name="username" />
