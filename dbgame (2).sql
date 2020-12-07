@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 06 Δεκ 2020 στις 15:40:06
+-- Χρόνος δημιουργίας: 07 Δεκ 2020 στις 14:12:54
 -- Έκδοση διακομιστή: 10.4.8-MariaDB
 -- Έκδοση PHP: 7.3.11
 
@@ -24,6 +24,9 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+--
+-- Δομή πίνακα για τον πίνακα `cards`
+--
 
 CREATE TABLE `cards` (
   `id` int(11) NOT NULL,
@@ -32,6 +35,9 @@ CREATE TABLE `cards` (
   `owner` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Άδειασμα δεδομένων του πίνακα `cards`
+--
 
 INSERT INTO `cards` (`id`, `card_name`, `card_value`, `owner`) VALUES
 (1, 'H1', '1', NULL),
@@ -87,12 +93,41 @@ INSERT INTO `cards` (`id`, `card_name`, `card_value`, `owner`) VALUES
 (51, 'TQ', 'Q', NULL),
 (52, 'TK', 'K', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `login`
+--
+
+CREATE TABLE `login` (
+  `Players` text NOT NULL,
+  `Username` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `login`
+--
+
+INSERT INTO `login` (`Players`, `Username`) VALUES
+('player1', ''),
+('player2', '');
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `played_cards`
+--
+
 CREATE TABLE `played_cards` (
   `id` int(11) NOT NULL,
   `card_name` text NOT NULL,
   `card_value` text NOT NULL,
   `owner` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `played_cards`
+--
 
 INSERT INTO `played_cards` (`id`, `card_name`, `card_value`, `owner`) VALUES
 (1, 'H1', '1', NULL),
@@ -148,6 +183,11 @@ INSERT INTO `played_cards` (`id`, `card_name`, `card_value`, `owner`) VALUES
 (51, 'TQ', 'Q', NULL),
 (52, 'TK', 'K', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `start`
+--
 
 CREATE TABLE `start` (
   `games` text DEFAULT NULL,
@@ -155,35 +195,41 @@ CREATE TABLE `start` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `game`
+-- Άδειασμα δεδομένων του πίνακα `start`
 --
 
 INSERT INTO `start` (`games`, `turn`) VALUES
-('started', 'Eleni');
+('initialized', NULL);
 
 --
--- Δομή πίνακα για τον πίνακα `login`
+-- Ευρετήρια για άχρηστους πίνακες
 --
 
-CREATE TABLE `login` (
-  `Id` text NOT NULL,
-  `Username` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-COMMIT;
-
-INSERT INTO `login` (`Id`, `Username`) VALUES
-('Id1', 'Eleni'),
-('Id2', 'Lina');
-
+--
+-- Ευρετήρια για πίνακα `cards`
+--
 ALTER TABLE `cards`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Ευρετήρια για πίνακα `played_cards`
+--
 ALTER TABLE `played_cards`
   ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT για άχρηστους πίνακες
+--
+
+--
+-- AUTO_INCREMENT για πίνακα `cards`
+--
 ALTER TABLE `cards`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
+--
+-- AUTO_INCREMENT για πίνακα `played_cards`
+--
 ALTER TABLE `played_cards`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 COMMIT;

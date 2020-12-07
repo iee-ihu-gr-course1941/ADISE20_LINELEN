@@ -1,19 +1,20 @@
 <?php
 session_start();
-if (!isset($_REQUEST['p'])) {
-    $_REQUEST['p'] = '';
+if (!isset($_REQUEST['log'])) {
+    $_REQUEST['log'] = '';
 }
-if ($_REQUEST['p'] == 'do_connect') {
-    $_REQUEST['p'] = '';
+if ($_REQUEST['log'] == 'do_connect') {
+    $_REQUEST['log'] = '';
     require "do_connect.php";
 }
 if (!isset($_SESSION['user'])) {
+
+    // Redirect them to the login page
     header("Location: login2.php");
 }
 echo $_SESSION['user'];
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,7 @@ echo $_SESSION['user'];
      <script src="game.js"></script>
 </head>
 <body>
+
 <div id="board">
         <div id="Red">
             <img src="./image/red.png" alt="Red">

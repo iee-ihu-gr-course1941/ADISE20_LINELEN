@@ -6,18 +6,18 @@ require "dbconnect.php";
 		$stmt1 = $mysqli->prepare('SELECT * from `login`');
 		$stmt1->execute();
 		$result = $stmt1->get_result();
-
+		
 		if(mysqli_num_rows($result)==0){
 		$_SESSION['user'] = "player1";
 		$_SESSION['Username'] = $Username;
-
+		
 		$stmt0 = $mysqli->prepare("DELETE FROM `login`");
 		$stmt0->execute();
 
 		$stmt1 = $mysqli->prepare("UPDATE `cards` SET `owner`=null");
 		$stmt1->execute();
 
-		$stmt1 = $mysqli->prepare("UPDATE `start` SET `games`=null,`has_turn`=null");
+		$stmt1 = $mysqli->prepare("UPDATE `start` SET `games`=null,`turn`=null");
 		$stmt1->execute();
 
 		$stmt = $mysqli->prepare("INSERT INTO `login` (`Players`,`Username`) VALUES ('{$_SESSION['user']}','{$_SESSION['Username']}')");
