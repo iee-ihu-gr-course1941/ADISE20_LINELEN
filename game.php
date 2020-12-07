@@ -18,9 +18,21 @@ echo $_SESSION['user'];
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Game</title>
-	 <link rel="stylesheet" type="text/css" href="css/game.css">
-     <script src="game.js"></script>
+    <title>Game</title>
+     <link rel="stylesheet" type="text/css" href="css/game.css">
+     <script type="text/javascript" src="game.js"></script>
+     <script type="text/javascript">
+         function unhide() {
+                var hid = document.getElementsByClassName("exp");
+                // Emulates jQuery $(element).is(':hidden');
+                if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+                    hid[0].style.visibility = "visible";
+                }
+            }
+     </script>
+     <style>
+        .exp{visibility: hidden;}
+    </style>
 </head>
 <body>
 
@@ -33,7 +45,7 @@ echo $_SESSION['user'];
         </div>
 
         <div class="player_box top">
-            <p class="name">Player 1</p>
+            <p class="name">Waiting for opponent...</p>
             <p class="number_of_cards">0</p>
         </div>
        
@@ -44,9 +56,24 @@ echo $_SESSION['user'];
 
         <button id="pass">Pass</button>
         <button id="assign_color">Assign Color</button>
+
+        <div class="controls">
+    <?php
+//emfanisi button mono gia player1
+if ($_SESSION['user'] == "player1") {
+    echo "<button onclick='fill_table()' id='start' class='btn btn-primary'>ΕΝΑΡΞΗ/RESET</button>";
+}?>
+    </div>
+
+    <button onclick="unhide()">Show Answer</button>
+<div class="exp">
+    <p class="and">Take your finger out of your ear and listen to me</p>
+</div>
 </div>
         <div id="hand">
         </div>
+
+
 
 </body>
 </html>

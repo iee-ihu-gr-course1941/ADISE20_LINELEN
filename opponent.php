@@ -1,4 +1,4 @@
-<?php
+ <?php
 session_start();
 require 'dbconnect.php';
 //an eisai o player1 tote deikse san antipalo to onoma tou player2
@@ -25,3 +25,5 @@ if($_SESSION['user']=="player1"){
     echo "Waiting for opponent...";
 }
 }
+
+?>

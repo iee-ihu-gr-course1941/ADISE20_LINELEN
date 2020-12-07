@@ -110,3 +110,6 @@ p {
     bottom: 25%;
 }
 
+.exp {
+    visibility: hidden;
+}
