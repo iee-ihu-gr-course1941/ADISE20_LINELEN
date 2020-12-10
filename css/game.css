@@ -4,12 +4,11 @@ body {
     font-family: 'Montserrat';
 }
 
-#pass {
+/*koumpi paso */
+#pass { 
     margin-left: 3%;
 }
-#assign_color {
-    display: none;
-}
+
 
 button {
     background-color: #808080;
@@ -46,10 +45,11 @@ button:active {
     position: relative;
     border-radius: 20px;
     margin: auto;
-    margin-top: -10%;
+    margin-top: -40%;
     width: 50%;
     border: 73px solid #808080;
     background-color: #808080;
+    top:60%;
     /*display: none;*/
 
 }
@@ -64,6 +64,7 @@ button:active {
     position: absolute;
     margin-top: 12%;
     margin-left: 55%;
+    
 }
 
 #hand > img {
@@ -111,5 +112,11 @@ p {
 }
 
 .exp {
+    margin-left: 80%; 
     visibility: hidden;
+}
+
+#odigies {
+    margin-left: 84%;
+    
 }
