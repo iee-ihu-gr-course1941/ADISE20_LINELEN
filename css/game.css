@@ -1,12 +1,10 @@
 body {
-    background-color: #0C0C0D;
-    color: #ffffff;
     font-family: 'Montserrat';
 }
 
 /*koumpi paso */
 #pass { 
-    margin-left: 3%;
+    margin-left: 1300px;
 }
 
 
@@ -30,30 +28,6 @@ button:active {
     background-color: #000000;
 }
 
-#board {
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #ffffff;
-    margin: auto;
-    background-color: #008000;
-    width: 90%;
-    height: 650px;
-    
-}
-
-#hand {
-    position: relative;
-    border-radius: 20px;
-    margin: auto;
-    margin-top: -40%;
-    width: 50%;
-    border: 73px solid #808080;
-    background-color: #808080;
-    top:60%;
-    /*display: none;*/
-
-}
-
 #Red {
     position: absolute;
     margin-top: 12%;
@@ -64,20 +38,13 @@ button:active {
     position: absolute;
     margin-top: 12%;
     margin-left: 55%;
+    height: 125px;
+  	width: 100px;
+
     
 }
 
-#hand > img {
-    width: 10%;
-}
 
-#Red > img {
-    width: 110%;
-}
-
-#top_card > img {
-    width: 110%;
-}
 .player_box {
     text-align: center;
     position: relative;
@@ -86,13 +53,9 @@ button:active {
     background-color: #808080;
     width: 20%;
 }
-.enabled {
-    border: 5px solid #36e236;
-}
 
-.current_player {
-    border: 5px dotted #ffffff;
-}
+
+
 p {
     font-size: 15px;
     font-weight: bold;
@@ -111,12 +74,25 @@ p {
     bottom: 25%;
 }
 
-.exp {
-    margin-left: 80%; 
-    visibility: hidden;
+#p{
+	position: absolute;
+	height:100px;
+    width: 30%;
+
 }
 
-#odigies {
-    margin-left: 84%;
-    
+#myDIV {
+  width: 30%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  display: none;
+}
+
+.controls{
+	margin-top: -100px;
+}
+#rules {
+	margin-top: 30px;
 }
