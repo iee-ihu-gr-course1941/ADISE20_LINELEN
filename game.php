@@ -31,6 +31,12 @@ echo $_SESSION['user'];
              x.style.display = "none";
   }
 }</script>
+<script type="text/javascript">function show_opponent() {
+
+    document.getElementById("opponent").innerHTML == "Waiting for opponent...";
+        
+}</script>
+
 </head>
 <body>
 
@@ -42,7 +48,7 @@ echo $_SESSION['user'];
         </div>
 
         <div class="player_box top">
-            <p id="opponent">Waiting for opponent...</p>
+            <p id="opponent">Waiting for ...</p>
             <p class="number_of_cards">0</p>
         </div>
        
