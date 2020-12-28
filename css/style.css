@@ -26,7 +26,7 @@ input{
 	margin-bottom: 5px;
 }
 .btn{
-	width: 330px;
+	width: 630px;
 	height: 40px;
 	margin-left: 17px;
 	margin-top: 15px;
@@ -41,4 +41,73 @@ a{
 	font-size: 20px;
 	color: white;
 	margin-left: 200px;
+}
+
+
+
+#loginButton {
+    border-radius: 60%;
+    padding: 4px 8px;
+}
+
+
+.card1 {
+    position: relative;
+    left: -50px;
+}
+
+.card2 {
+    position: relative;
+    left: -100px;
+}
+
+.card3 {
+    position: relative;
+    left: -150px;
+}
+
+.card4 {
+    position: relative;
+    left: -200px;
+}
+
+.card5 {
+    position: relative;
+    left: -250px;
+}
+
+#loginForm {
+	 margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
+    text-align: center;
+}
+
+.cards {
+    height: 70px;
+    
+}
+
+img {
+    width: 100px;
+    height: 125px;
+}
+
+#viewer img:hover {
+    position: relative;
+    top: -20px;  
+}
+
+#stack {
+    padding-left: 150px;
+}
+#stack img {
+    position: absolute;
+}
+
+#board {
+	position: relative;
+	left: 550px;
+
 }

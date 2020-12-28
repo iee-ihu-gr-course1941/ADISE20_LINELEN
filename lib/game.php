@@ -1,7 +1,8 @@
 <?php
+
+//ελέγχει και επιστρέφει την κατάσταση του παιχνιδιού σε μορφή json
 function show_status() {
 	global $mysqli;
-
 	check_abort();
 
 	$sql = 'select * from game_status';
@@ -13,6 +14,7 @@ function show_status() {
 	print json_encode($res->fetch_all(MYSQLI_ASSOC), JSON_PRETTY_PRINT);
 }
 
+//ελέγχει αν ο παίκτης βρίσκεται σε αδράνεια και αν ξεπερνάει τα πέντε λέπτα τότε ανακηρύσσεται νικητής ο αντίπαλος παίκτης 
 function check_abort() {
 	global $mysqli;
 
@@ -23,7 +25,7 @@ function check_abort() {
 	$st->execute();
 }
 
-
+//επιστρέφει την κατάσταση του παιχνιδιού
 function read_status() {
 	global $mysqli;
 
@@ -35,7 +37,7 @@ function read_status() {
 	return($status);
 }
 
-
+//Σε περίπτωση αδράνειας διαγράφονται τα στοιχεία του παίκτη και ενημερώνετε η κατάσταση του παιχνιδιού
 function update_game_status() {
 	global $mysqli;
 
@@ -61,7 +63,6 @@ function update_game_status() {
 	$st->execute();
 	$res = $st->get_result();
 	$active_players = $res->fetch_assoc()['c'];
-	
 	switch($active_players) {
 		case 0: $new_status='not active'; break;
 		case 1: $new_status='initialized'; break;
