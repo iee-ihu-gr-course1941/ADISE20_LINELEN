@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower|IBM+Plex+Sans&display=swap" rel="stylesheet">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="js/dry.js"></script>
+        <SCRIPT TYPE="text/javascript"> function popup(mylink, windowname) { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=750,height=500,scrollbars=yes'); return false; } 
+    </SCRIPT>
+
         <style >
             body  {
                     background-color: #cccccc;
@@ -35,12 +38,28 @@
                 #stack img {
                         position: absolute;
                 }
+                .odigiesbutton {
+                          background-color: black;
+                          border: none;
+                          color: white;
+                          padding: 15px 32px;
+                          text-align: center;
+                          text-decoration: none;
+                          display: inline-block;
+                          font-size: 16px;
+                          margin: 4px -200px;
+                          cursor: pointer;
+                          border-radius: 12px;
+
+                        }  
+
         </style>
 
     </head>
     <body>
         <h1>ΑΒΗΣΣΥΝΙΑ 2020</h1>
-        <input type="button" value="ΕΝΑΡΞΗ/RESET" id="reset"/>
+        <a href="odigies.html" onClick="return popup(this, 'Οδηγίες')"><button type="button" class="odigiesbutton">Οδηγίες Παιχνιδιού</button></a>
+        <input type="button" value="ΕΞΟΔΟΣ" id="reset"/>
         <div id="loginForm">
             <input id="username" placeholder="Pick a username">
             <button id="loginButton">Eisodos</button>
@@ -61,5 +80,6 @@
         </div>
         <div id="game_info">
         </div>
+
     </body>
 </html>
