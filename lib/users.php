@@ -3,7 +3,7 @@
 //επιστρέφει τα στοιχεία των παικτών σε μορφή json
 function show_players() {
     global $mysqli;
-    $sql = 'select p_id, username from players';
+    $sql = 'select p_id, username, token from players';
     $st = $mysqli->prepare($sql);
     $st->execute();
     $res = $st->get_result();
